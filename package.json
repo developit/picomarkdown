@@ -1,0 +1,39 @@
+{
+  "name": "picomarkdown",
+  "description": "Converts basic markdown to HTML.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/developit/picomarkdown",
+  "authors": [
+    {
+      "name": "Simon Waldherr",
+      "email": "contact@simonwaldherr.de",
+      "url": "http://simon.waldherr.eu/"
+    },
+    {
+      "name": "Jason Miller",
+      "email": "jason@developit.ca",
+      "url": "http://developt.ca/"
+    }
+  ],
+  "main": "picomarkdown.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/developit/picomarkdown.git"
+  },
+  "bugs": {
+    "url": "https://github.com/developit/picomarkdown/issues"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "markdown",
+    "gfm",
+    "md",
+    "html",
+    "parser"
+  ],
+  "scripts": {
+    "test": "echo 'No tests defined' && exit 0"
+  }
+}
