@@ -5,14 +5,14 @@
   "homepage": "https://github.com/developit/picomarkdown",
   "authors": [
     {
-      "name": "Simon Waldherr",
-      "email": "contact@simonwaldherr.de",
-      "url": "http://simon.waldherr.eu/"
-    },
-    {
       "name": "Jason Miller",
       "email": "jason@developit.ca",
       "url": "http://developt.ca/"
+    },
+    {
+      "name": "Simon Waldherr",
+      "email": "contact@simonwaldherr.de",
+      "url": "http://simon.waldherr.eu/"
     }
   ],
   "main": "picomarkdown.js",
