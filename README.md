@@ -1,8 +1,14 @@
-Picomarkdown
+Picomarkdown [![NPM Version](http://img.shields.io/npm/v/picomarkdown.svg?style=flat)](https://www.npmjs.org/package/picomarkdown) [![Bower Version](http://img.shields.io/bower/v/picomarkdown.svg?style=flat)](http://bower.io/search/?q=picomarkdown)
 ============
 
 This is a trimmed-down version of [Micromarkdown.js](https://github.com/SimonWaldherr/micromarkdown.js).  
 It is smaller, and doesn't support the AJAX/include or tables functionalities.
+
+Demo
+----
+
+Here's a simple JSFiddle demo of the parser:  
+**[Picomarkdown Demo](http://jsfiddle.net/developit/Lg5mcane/)**
 
 
 About
@@ -29,4 +35,4 @@ console.log(html);
 Credits
 -------
 
-All credit for Picomarkdown goes to the author of [Micromarkdown.js](https://github.com/SimonWaldherr/micromarkdown.js): [Simon Waldherr](http://twitter.com/simonwaldherr).
+All credit for Picomarkdown goes to the author of [Micromarkdown.js](https://github.com/SimonWaldherr/micromarkdown.js), on which this library is shamelessly based: [Simon Waldherr](http://twitter.com/simonwaldherr).
