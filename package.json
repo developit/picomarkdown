@@ -1,7 +1,7 @@
 {
   "name": "picomarkdown",
   "description": "Converts basic markdown to HTML.",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "homepage": "https://github.com/developit/picomarkdown",
   "authors": [
     {
