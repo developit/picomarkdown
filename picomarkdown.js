@@ -194,7 +194,7 @@
 			str = str.replace(stra[0], '\n<hr/>\n');
 		}
 
-		str = str.replace(/( {2,}[\n]{1,}|\n\n+)/gmi, '<br/><br/>');
+		str = str.replace(/( {2,}[\n]{1,}|\n\n+)/g, '\n<br/><br/>\n');
 		return str;
 	}
 
