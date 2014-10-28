@@ -20,8 +20,11 @@
 		root.picomarkdown = factory();
 	}
 }(this, function() {
+	"use strict";
+
 	var regs = {
 		headline : /^(\#{1,6})([^\#\n]+)$/m,
+		headline2 : /\n(.*?)\n(={3,}|-{3,})$/g,
 		code : /\s\`\`\`\n?([^`]+)\`\`\`/g,
 		hr : /^(?:([\*\-_] ?)+)\1\1$/gm,
 		lists : /^((\s*((\*|\-)|\d(\.|\))) [^\n]+)\n)+/gm,
@@ -33,17 +36,11 @@
 	};
 
 	function cssClass(str, strict) {
-		var urlTemp;
-		if ((str.indexOf('/') !== -1) && (strict !== true)) {
-			urlTemp = str.split('/');
-			if (urlTemp[1].length === 0) {
-				urlTemp = urlTemp[2].split('.');
-			} else {
-				urlTemp = urlTemp[0].split('.');
-			}
-			return 'class="' + urlTemp[urlTemp.length - 2].replace(/[^\w\d]/g, '') + urlTemp[urlTemp.length - 1] + '" ';
-		}
-		return '';
+		if (str.indexOf('/')<0 || strict===true) return '';
+
+		var url = str.split('/');
+		url = url[url[1].length===0 ? 2 : 0].split('.');
+		return 'class="' + url[url.length - 2].replace(/[^\w\d]/g, '') + url[url.length - 1] + '" ';
 	}
 
 	function htmlEscape(str) {
@@ -61,7 +58,6 @@
 	 *  @returns {String} html
 	 */
 	function picomarkdown(str, strict) {
-		"use strict";
 		var line, nstatus = 0,
 			status, cel, calign, indent, helper, helper1, helper2, count, repstr, stra, trashgc = [],
 			casca = 0,
@@ -79,9 +75,13 @@
 		}
 
 		/* headlines */
-		while ((stra = regs.headline.exec(str)) !== null) {
+		while ((stra = regs.headline.exec(str))) {
 			count = stra[1].length;
 			str = str.replace(stra[0], '<h' + count + '>' + stra[2] + '</h' + count + '>' + '\n');
+		}
+		while ((stra = regs.headline2.exec(str))) {
+			count = stra[2][0]==='=' ? 1 : 2;
+			str = str.replace(stra[0], '<h' + count + '>' + stra[1] + '</h' + count + '>' + '\n');
 		}
 
 		/* lists */
@@ -194,7 +194,7 @@
 			str = str.replace(stra[0], '\n<hr/>\n');
 		}
 
-		str = str.replace(/ {2,}[\n]{1,}/gmi, '<br/><br/>');
+		str = str.replace(/( {2,}[\n]{1,}|\n\n+)/gmi, '<br/><br/>');
 		return str;
 	}
 
