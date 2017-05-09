@@ -1,6 +1,8 @@
 Picomarkdown [![NPM Version](http://img.shields.io/npm/v/picomarkdown.svg?style=flat)](https://www.npmjs.org/package/picomarkdown) [![Bower Version](http://img.shields.io/bower/v/picomarkdown.svg?style=flat)](http://bower.io/search/?q=picomarkdown)
 ============
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/developit/picomarkdown.svg)](https://greenkeeper.io/)
+
 This is a trimmed-down version of [Micromarkdown.js](https://github.com/SimonWaldherr/micromarkdown.js).  
 It is smaller, and doesn't support the AJAX/include or tables functionalities.
 
